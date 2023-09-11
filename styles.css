@@ -1,0 +1,299 @@
+body,
+ul,
+li {
+    font-family: tahoma;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(145,224,255,255);
+}
+
+header {
+    background-color: rgba(145,224,255,255);
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+.box {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    margin: 30px;
+}
+
+.title {
+    color: rgb(72, 72, 72);
+    width: 100%;
+    background-color: rgba(145,224,255,255);
+    display: inline-block;
+    padding: 2px 0px;
+    position: sticky;
+    top: 0px;
+}
+
+.banner {
+    height: 150px;
+    overflow: hidden;
+}
+
+.banner img {
+    margin: 0px 0px 0px 0px;
+    width: 100%;
+}
+
+.fields {
+    padding: 30px;
+    color: white;
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 108%;
+}
+
+.mandatoryText {
+    justify-content: center;
+    color: rgb(114, 114, 114);
+    position: relative;
+    bottom: 42px;
+    margin-left: 30px;
+    font-size: 13px;
+}
+
+.newItem:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.newItemField {
+    margin: 0;
+    border: 1px solid rgb(35, 32, 24);
+    padding: 10px;
+    font-size: 16px;
+}
+
+.newItemFieldError {
+    margin: 0;
+    border: 1px solid rgb(218, 1, 1);
+    padding: 10px;
+    font-size: 16px;
+}
+
+#newCode {
+    width: 13%;
+}
+
+#newName {
+    width: 13%;
+}
+
+#newPower {
+    width: 8%;
+}
+
+#newVoltage {
+    width: 8%;
+}
+
+
+#newRoom {
+    width: 8%;
+}
+
+#newAmperage {
+    width: 8%;
+}
+
+#newDiameter {
+    width: 13%;
+}
+
+
+.addBtn {
+    padding: 9px 10px;
+    background-color: rgb(18, 66, 86);
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+.addBtn:hover {
+    background-color: rgb(11, 41, 53);
+    color: white;
+}
+
+.items {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.fa-solid:hover {
+    color: rgb(82, 81, 81);
+    font-weight: bolder;
+}
+
+.editar {
+    cursor: pointer;
+    color: rgb(82, 81, 81);
+    font-weight: bolder;
+    font-size: 20px;
+    margin-left: 5px;
+    background-color: transparent;
+} 
+
+.editar:hover {
+    color: rgb(82, 81, 81);
+    font-weight: bolder;
+}
+
+.exportar {
+    padding: 20px;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap; 
+    margin-top: -60px;
+    margin-right: 20px;
+}
+
+.textLabel {
+    color: rgb(114, 114, 114);
+    font-size: 13px;
+    text-align: left;
+    text-indent: 10%;
+}
+
+table,
+th,
+td {
+    border: 0px solid rgb(198, 183, 183);
+    border-collapse: collapse;
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 10px;
+    font-size: 18px;
+    transition: 0.2s;
+    text-align: center;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+  }
+  
+  th {
+    background-color: rgb(18, 66, 86);
+    color: white;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  td {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  tr:nth-child(odd) {
+    background-color: rgb(255, 255, 255);
+    color: rgb(114, 114, 114);
+  }
+  
+  tr:nth-child(even) {
+    background-color: rgb(242, 240, 240);
+    color: rgb(114, 114, 114);
+  }
+  
+  tr:hover {
+    background-color: rgb(116, 116, 116);
+    color: rgb(255, 255, 255);
+}
+
+/* Estilos do modal */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+
+/* Conteúdo do modal */
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 0px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    height: 620px;
+    box-shadow: 0px 0px 10px 2px #888;
+    text-align: center;
+    position: relative;
+}
+
+.editField {
+    margin: 5px;
+    margin-left: -20px;
+    border: 1px solid rgb(35, 32, 24);
+    padding: 10px;
+    font-size: 16px;
+    width: 70%;
+}
+
+.editFieldBlocked {
+    margin: 5px;
+    margin-left: -20px;
+    border: 1px solid rgb(35, 32, 24);
+    background-color: #c6c6c6;
+    padding: 10px;
+    font-size: 16px;
+    width: 70%;
+    pointer-events: none;
+}
+
+.campos {
+    padding: 0px;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 108%;
+    margin: 0px 0px 30px 0px;
+}
+
+/* Botão de fechar no canto superior direito do modal */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.saveBtn {
+    padding: 10px 10px 10px 10px;
+    background-color: rgb(18, 66, 86);
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+.saveBtn:hover {
+    background-color: rgb(11, 41, 53);
+    color: white;
+}

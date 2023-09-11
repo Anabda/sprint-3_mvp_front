@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4419637163319530"
+     crossorigin="anonymous"></script>
+     
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+
+    <title>Aparelhos Eletrônicos</title>
+</head>
+
+<body>
+
+    <!-- Cabeçalho de informações do sistema -->
+    <header>
+        <div class="title">
+            <h2>Aparelhos eletrônicos</h2>
+        </div>
+        <div class="banner">
+            <img src="Images/eletronicos-fundo.jpg"
+                alt="y">
+        </div>
+    </header>
+    <div class="box"> 
+     <!-- Opções para adicionar um novo item -->
+    <section class="newItem">
+        <div class="fields">
+            <input type="text" class="newItemField" id="newCode" placeholder="Código do patrimônio: *">
+            <input type="text" class="newItemField" id="newName" placeholder="Nome: *">
+            <input type="text" class="newItemField" id="newPower" placeholder="Potência (W): *">
+            <input type="text" class="newItemField" id="newVoltage" placeholder="Voltagem (V): *">
+            <input type="text" class="newItemField" id="newRoom" placeholder="Cômodo:">
+            <input type="text" class="newItemField" id="newAmperage" placeholder="Amperagem (A):">
+            <input type="text" class="newItemField" id="newDiameter" placeholder="Diâmetro do fio (mm):">
+            <span onclick="newItem()" class="addBtn">Adicionar</span>
+        </div>
+        <div class="mandatoryText">
+            <br/>* Campos obrigatórios
+        </div> 
+    </section>
+    <section class="newItem">
+        <div class="exportar">
+            <button id="sheetjsexport" class="addBtn">
+                <i class="fas fa-download"></i> Exportar lista
+            </button>
+        </div>
+    </section>
+    <!-- Tabela com items existentes -->
+    <section class="items">
+        <table id="myTable">
+            <thead id="myTableHeader">
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Potência (W)</th>
+                    <th>Voltagem (V)</th>
+                    <th>Cômodo</th>
+                    <th>Amperagem (A)</th>
+                    <th>Diâmetro do fio (mm)</th>
+                    <th> </th>
+                    <th> </th>
+                </tr>
+            </thead>
+            <tbody id="myTableBody">
+            </tbody>
+        </table>
+    </section>
+    
+    </div>      
+    <!-- Modal de edição-->
+    <div id="myModal" class="modal">
+        <section>
+            <div class="modal-content">
+            <span class="close">&times;</span>
+            <!-- Conteúdo do modal (campos de edição, informações, etc.) -->
+            <h2>Editar Aparelho</h2>
+            <section class="newItem">
+                <div class="campos">
+                    <div class="textLabel">Código:</div>
+                    <input type="text" class="editFieldBlocked" id="editCode" placeholder="Código: ">
+                    <div class="textLabel">Nome: *</div>
+                    <input type="text" class="editField" id="editName" placeholder="Nome: *">
+                    <div class="textLabel">Potência (W): *</div>
+                    <input type="text" class="editField" id="editPower" placeholder="Potência (W): *">
+                    <div class="textLabel">Voltagem (V): *</div>
+                    <input type="text" class="editField" id="editVoltage" placeholder="Voltagem (V): *">
+                    <div class="textLabel">Cômodo:</div>
+                    <input type="text" class="editField" id="editRoom" placeholder="Cômodo: ">
+                    <div class="textLabel">Amperagem (A):</div>
+                    <input type="text" class="editField" id="editAmperage" placeholder="Amperagem (A):">
+                    <div class="textLabel">Diâmetro do fio (mm):</div>
+                    <input type="text" class="editField" id="editDiameter" placeholder="Diâmetro do fio (mm): ">
+                </div>
+            </section>
+            <div class="mandatoryText">
+                <br/>* Campos obrigatórios
+            </div> 
+            <span onclick=editItem() id="saveChanges" class="saveBtn">Salvar</span>
+        </div>
+        </section>
+    </div>
+
+    <script src="scripts.js"></script>
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.js"></script>
+
+</body>
+</html>
+
+
