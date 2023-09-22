@@ -42,3 +42,7 @@ Também inclui um script que gera um anúncio google, integrando com a API de an
 4- Copiar o código e inserir no head da página html
 5- Criar um arquivo ads.txt com seu código de cliente
 Os anúncios aparecem quando o Google verifica a sua página e aceita a sua requisição
+
+### API de cômodos
+Além de se comunicar com os serviços de aparelhos, o front-end também se comunica com uma API de cômodos, em que a listagem de cômodos é carregada no momento do carregamento da página e é usado para auxiliar o usuário a preencher o formulário de inclusão de aparelho sem erros de digitação no cômodo, melhorando a experiência do usuário.
+Estou usando a rota get da API de cômodos, que retorna todos os cômodos cadastrados no sistema

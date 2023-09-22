@@ -29,26 +29,14 @@
     <div class="box"> 
      <!-- Opções para adicionar um novo item -->
     <section class="newItem">
-        <div class="fields">
-            <input type="text" class="newItemField" id="newCode" placeholder="Código do patrimônio: *">
-            <input type="text" class="newItemField" id="newName" placeholder="Nome: *">
-            <input type="text" class="newItemField" id="newPower" placeholder="Potência (W): *">
-            <input type="text" class="newItemField" id="newVoltage" placeholder="Voltagem (V): *">
-            <input type="text" class="newItemField" id="newRoom" placeholder="Cômodo:">
-            <input type="text" class="newItemField" id="newAmperage" placeholder="Amperagem (A):">
-            <input type="text" class="newItemField" id="newDiameter" placeholder="Diâmetro do fio (mm):">
-            <span onclick="newItem()" class="addBtn">Adicionar</span>
-        </div>
-        <div class="mandatoryText">
-            <br/>* Campos obrigatórios
-        </div> 
-    </section>
-    <section class="newItem">
         <div class="exportar">
+            <button onclick="openIncludeModal()" class="addBtn">
+                <i class="fa-solid fa-plus"></i> Adicionar novo
+            </button>
             <button id="sheetjsexport" class="addBtn">
                 <i class="fas fa-download"></i> Exportar lista
             </button>
-        </div>
+        </div> 
     </section>
     <!-- Tabela com items existentes -->
     <section class="items">
@@ -88,9 +76,13 @@
                     <div class="textLabel">Potência (W): *</div>
                     <input type="text" class="editField" id="editPower" placeholder="Potência (W): *">
                     <div class="textLabel">Voltagem (V): *</div>
-                    <input type="text" class="editField" id="editVoltage" placeholder="Voltagem (V): *">
+                    <select class="editField" id="editVoltage">
+                        <option value="" disabled selected hidden>Voltagem (V): *</option>
+                        <option value="110" >110V</option>
+                        <option value="220">220V</option>
+                    </select>
                     <div class="textLabel">Cômodo:</div>
-                    <input type="text" class="editField" id="editRoom" placeholder="Cômodo: ">
+                    <input type="text" class="editFieldBlocked" id="editRoom" placeholder="">
                     <div class="textLabel">Amperagem (A):</div>
                     <input type="text" class="editField" id="editAmperage" placeholder="Amperagem (A):">
                     <div class="textLabel">Diâmetro do fio (mm):</div>
@@ -100,10 +92,53 @@
             <div class="mandatoryText">
                 <br/>* Campos obrigatórios
             </div> 
-            <span onclick=editItem() id="saveChanges" class="saveBtn">Salvar</span>
+            <div class="marginBtn">
+                <button onclick=editItem() id="saveChanges" class="saveBtn">Salvar</button>
+            </div>
         </div>
         </section>
     </div>
+
+<!-- Modal de inclusão-->
+<div id="myIncludeModal" class="modal">
+    <section>
+        <div class="modal-content">
+        <span class="close" onclick="closeIncludeModal()">&times;</span>
+        <!-- Conteúdo do modal (campos de edição, informações, etc.) -->
+        <h2>Adicionar Aparelho</h2>
+        <section class="newItem">
+            <div class="campos">
+                    <div class="textLabel">Código: *</div>
+                    <input type="text" class="newItemField" id="newCode" placeholder="Código: *">
+                    <div class="textLabel">Nome: *</div>
+                    <input type="text" class="newItemField" id="newName" placeholder="Nome: *">
+                    <div class="textLabel">Potência (W): *</div>
+                    <input type="text" class="newItemField" id="newPower" placeholder="Potência (W): *">
+                    <div class="textLabel">Voltagem (V): *</div>
+                    <select class="newItemField" id="newVoltage">
+                        <option value="" disabled selected hidden>Voltagem (V): *</option>
+                        <option value="110" >110V</option>
+                        <option value="220">220V</option>
+                    </select>
+                    <div class="textLabel">Cômodo:</div>
+                    <select class="newItemField" id="newRoom">
+                        <option value="" disabled selected hidden id="newRoomLabel"></option>
+                    </select>
+                    <div class="textLabel">Amperagem (A):</div>
+                    <input type="text" class="newItemField" id="newAmperage" placeholder="Amperagem (A):">
+                    <div class="textLabel">Diâmetro do fio (mm):</div>
+                    <input type="text" class="newItemField" id="newDiameter" placeholder="Diâmetro do fio (mm):">                
+        </div>
+        </section>
+        <div class="mandatoryText">
+            <br/>* Campos obrigatórios
+        </div> 
+        <div class="marginBtn">
+            <button onclick="newItem()" class="saveBtn">Salvar</button>
+        </div>
+    </div>
+    </section>
+</div>
 
     <script src="scripts.js"></script>
     <script src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.js"></script>
